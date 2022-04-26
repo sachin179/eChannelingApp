@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/ic_bg1"
     android:paddingStart="20dp"
     android:paddingEnd="20dp"
-    android:background="@mipmap/ic_bg1"
     tools:context=".MainActivity2">
-
 
 
     <TextView
@@ -16,8 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:fontFamily="@font/abril_fatface"
-        android:textAlignment="center"
         android:text="Register"
+        android:textAlignment="center"
+        android:textColor="#E21C1B1B"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,98 +30,97 @@
 
     <EditText
         android:id="@+id/rFullName"
-        android:layout_width="337dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="308dp"
+        android:layout_width="329dp"
+        android:layout_height="58dp"
         android:ems="10"
         android:hint="FullName"
         android:inputType="textPersonName"
+        android:textColor="#0C0B0B"
+        android:textColorHint="#171616"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.289" />
 
     <EditText
         android:id="@+id/rPassword"
-        android:layout_width="339dp"
+        android:layout_width="326dp"
         android:layout_height="42dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:textColorHint="#100F0F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rFullName"
-        app:layout_constraintVertical_bias="0.06999999" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.378" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/cPassword"
         android:layout_width="327dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
+        android:textColorHint="#151414"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rPassword"
-        app:layout_constraintVertical_bias="0.060000002" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/rbutton1"
         android:layout_width="356dp"
         android:layout_height="45dp"
-        android:layout_marginTop="16dp"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
-        app:layout_constraintVertical_bias="0.093"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="14dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.782"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="327dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="168dp"
+        android:id="@+id/rphonenu"
+        android:layout_width="312dp"
+        android:layout_height="45dp"
         android:ems="10"
         android:hint="+94783100177"
         android:inputType="phone"
+
+        android:textColorHint="#070707"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.687" />
 
     <TextView
         android:id="@+id/RegisterLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:text="Already Registerd?Click here"
         android:textColor="#2D46CC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.842" />
 
     <Spinner
         android:id="@+id/rollSpin"
-        android:layout_width="338dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="313dp"
+        android:layout_height="30dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
-        app:layout_constraintVertical_bias="0.071" />
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.59" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
