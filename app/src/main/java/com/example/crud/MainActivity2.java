@@ -1,7 +1,9 @@
 package com.example.crud;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -15,27 +17,37 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity2 extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
-    private FirebaseAuth mAuth;
-    private EditText rFullName,rPassword,editTextTextPassword2,rollSpin,editTextPhone;
-    private TextView button1;
+//create object of database references class to access firebase's realtime datebase
+
+DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://echannelling-b9e97-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar();
+        setContentView(R.layout.activity_main2);
 
         final EditText rFullName = findViewById(R.id.rFullName);
         final EditText rPassword = findViewById(R.id.rPassword);
         final EditText cPassword = findViewById(R.id.cPassword);
-        final Spinner rollSpin = findViewById(R.id.rollSpin);
+       // final Spinner rollSpin = findViewById(R.id.rollSpin);
         final EditText rphonenu = findViewById(R.id.rphonenu);
 
         final Button rbutton1 = findViewById(R.id.rbutton1);
+       // final TextView loginnowbtn  = findViewById(R.id.RegisterLink_2);
+
+
 
         rbutton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,20 +56,64 @@ public class MainActivity2 extends AppCompatActivity implements AdapterView.OnIt
                 final String rFullNametxt = rFullName.getText().toString();
                 final String rPasswordtxt = rPassword.getText().toString();
                 final String cPasswordtxt = cPassword.getText().toString();
-                final String rollSpintxt = rphonenu.getText().toString();
+               // final String rollSpintxt = rollSpin.getText().toString();
                 final String rphonenutxt = rphonenu.getText().toString();
 
                 //check if user fill all the field befor sending data to firebase
-                if(rFullNametxt.isEmpty() || rPasswordtxt.isEmpty() || cPasswordtxt.isEmpty() || rollSpintxt.isEmpty() || rphonenutxt.isEmpty()){
+                if(rFullNametxt.isEmpty() || rPasswordtxt.isEmpty() || cPasswordtxt.isEmpty()  || rphonenutxt.isEmpty()){
 
-                    Toast.makeText(MainActivity2.this,"pleace all the field")
+                    Toast.makeText(MainActivity2.this,"pleace all the field",Toast.LENGTH_SHORT).show();
+                }
+                //check if password are matching with each other
+                //if not matching with each other then show a tost messsage
+                else if(!rPasswordtxt.equals(cPasswordtxt)){
+                    Toast.makeText(MainActivity2.this, "password are not matching", Toast.LENGTH_SHORT).show();
+
+                }
+                else{
+                    databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            //check is phone is phone number is not registered before
+
+                           if(snapshot.hasChild(rphonenutxt)){
+                               Toast.makeText(MainActivity2.this, "phone is already registered", Toast.LENGTH_SHORT).show();
+                           }else {
+                              // databaseReference.child("users").addListenerForSingleValueEvent(new);
+                               //sendinh data to firebase realtimr database
+                               //we are using phone number as unique identity of every user
+                               //so all the other details of user comes under the phone number
+                               databaseReference.child("users").child(rphonenutxt).child("rFullName").setValue(rFullNametxt);
+                               databaseReference.child("users").child(rphonenutxt).child("rPassword").setValue(rPasswordtxt);
+
+                               //show a success then finish the activity
+                               Toast.makeText(MainActivity2.this, "user register successfully", Toast.LENGTH_SHORT).show();
+                               finish();
+
+                               rbutton1.setOnClickListener(new View.OnClickListener() {
+                                   @Override
+                                   public void onClick(View view) {
+                                       startActivity(new Intent(MainActivity2.this, MainActivity2.class));
+                                   }
+                               });
+
+                           }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+
+
                 }
             }
         });
 
 
-        setContentView(R.layout.activity_main2);
-        mAuth = FirebaseAuth.getInstance();
+
 
 
 

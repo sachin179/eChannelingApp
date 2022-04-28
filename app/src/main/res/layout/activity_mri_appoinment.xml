@@ -72,7 +72,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="More Details"
@@ -129,7 +129,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextPhone2"
+        android:id="@+id/mriPNu"
         android:layout_width="203dp"
         android:layout_height="30dp"
         android:ems="10"
@@ -184,10 +184,9 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profilepc"
         android:layout_width="114dp"
         android:layout_height="104dp"
-        android:src="@drawable/pres"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.006"
@@ -201,6 +200,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
