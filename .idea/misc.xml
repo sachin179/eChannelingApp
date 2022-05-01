@@ -3,16 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/drawable/ic_profile.xml" value="0.1405" />
         <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_add_prescription.xml" value="0.264" />
-        <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_main2.xml" value="0.1774193548387097" />
         <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_menstrual_period_calculate.xml" value="0.264" />
-        <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_mri_appoinment.xml" value="0.4" />
+        <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_mri_appoinment.xml" value="0.2" />
         <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_payment.xml" value="0.264" />
         <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_spets_add.xml" value="0.25" />
+        <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_update_mri.xml" value="0.234375" />
         <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_view_appoinment.xml" value="0.264" />
         <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/activity_view_item_list.xml" value="0.264" />
+        <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/layout/maini_item.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/menu/examplemenu.xml" value="0.234375" />
         <entry key="..\:/Users/Micheal/AndroidStudioProjects/crud/app/src/main/res/mipmap-anydpi-v26/ic_channel.xml" value="0.1205" />
       </map>
     </option>

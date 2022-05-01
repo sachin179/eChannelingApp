@@ -10,22 +10,21 @@ public class DAOEmployee {
 
     private DatabaseReference databaseReference;
 
-    public DAOEmployee(){
+    public DAOEmployee() {
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         databaseReference = db.getReference(Employee.class.getSimpleName());
     }
-    public Task<Void> add(Employee emp){
+//        public Task<Void> add(Employee emp)
+//        {
+//
+//           return databaseReference.push().setValue(emp);
+//
+//        }
 
-       return databaseReference.push().setValue(emp);
-    }
-    public Task<Void> update (String key, HashMap<String ,Object> hashMap)
+    public Task<Void> update(String key, HashMap<String , Object> hashMap)
     {
-        return databaseReference.child(key).updateChildren(hashMap);
-
-    }
-    public Task<Void> Remove(String key){
-        return databaseReference.child(key).removeValue();
+      return   databaseReference.child(key).updateChildren(hashMap);
     }
 
   }

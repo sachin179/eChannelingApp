@@ -3,13 +3,15 @@ package com.example.crud;
 public class Employee {
 
     private String name;
-    private String position;
+    private String phoneNumber;
+    private String Deatil;
+
     public Employee(){}
-        public Employee(String name,String position){
 
-            this.name = name;
-            this.position = position;
-
+    public Employee(String name, String phoneNumber, String deatil) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.Deatil = deatil;
     }
 
     public String getName() {
@@ -20,11 +22,19 @@ public class Employee {
         this.name = name;
     }
 
-    public String getPosition() {
-        return position;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getDeatil() {
+        return Deatil;
+    }
+
+    public void setDeatil(String deatil) {
+        Deatil = deatil;
     }
 }

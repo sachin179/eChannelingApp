@@ -9,6 +9,8 @@
     android:background="@mipmap/che"
     tools:context=".Home">
 
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="163dp"
